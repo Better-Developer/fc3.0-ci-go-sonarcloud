@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: 1.15
-      - run: go test ./sum_test.go ./sum.go 
+      - run: go test -coverage-profile=coverage.out ./sum_test.go ./sum.go 
       - run: go run ./sum.go
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
