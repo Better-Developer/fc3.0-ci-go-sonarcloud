@@ -13,9 +13,7 @@ jobs:
           go-version: 1.15
       - run: go test ./sum_test.go ./sum.go 
       - run: go run ./sum.go
-  sonar-cloud:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
 
 
